@@ -1,0 +1,15 @@
+modules:
+    workshop-overview:
+        name: Workshop Overview
+        exit_sign: Start Workshop
+    container-security/01-kubesec:
+        name: KubeSec
+    container-security/02-conftest:
+        name: ConfTest
+    container-security/03-admission-controller:
+        name: Admission Controller
+    container-security/04-trivy:
+        name: Trivy
+    workshop-summary:
+        name: Workshop Summary
+        exit_sign: Finish Workshop

@@ -1,0 +1,10 @@
+name: Container Security 02
+
+modules:
+    activate:
+    - workshop-overview
+    - container-security/01-kubesec
+    - container-security/02-conftest
+    - container-security/03-admission-controller
+    - container-security/04-trivy
+    - workshop-summary
