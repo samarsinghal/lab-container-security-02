@@ -68,6 +68,11 @@ Verify touch command is working
 
 ```execute
 touch test 
+```
+
+Exit container
+
+```execute
 exit
 ```
 
@@ -102,6 +107,12 @@ touch test
 exit
 ```
 
+Exit container
+
+```execute
+exit
+```
+
 Now, Use startupProbe to remove bash from containers
 
 
@@ -117,4 +128,8 @@ Verify that the Pod's Container is running. Get a bash to the running Container 
 kubectl exec -it immutable-no-bash -- bash
 ```
 
+Cleanup 
+```execute
+kubectl delete pods mutable immutable-no-bash immutable-no-touch
+```
 

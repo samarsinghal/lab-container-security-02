@@ -39,13 +39,17 @@ grep Seccomp /proc/$$/status
 Seccomp:	2
 Here you have grep the pseudo-filesystem to access the kernel data, which indicates that default Seccomp filter was applied inside the running container.
 
+```execute
+exit
+```
+
 Custom Seccomp Profile:
 
 There are scenarios where you want to override the default profile, which gives you extra control and capabilities to play with. In the following example, you are going to use your own custom profile.
 
 You can download Docker’s official default profile "https://raw.githubusercontent.com/docker/labs/master/security/seccomp/seccomp-profiles/default.json" and make changes to it:
 
-Once you have the .json file with you, it’s time to make changes to the file your-custom-profile.json. For this guide, we are simply going to restrict mkdir command inside the container. To do this, we remove all the references to the mkdir in the file, which could look something like this:
+Once you have the .json file with you, it’s time to make changes to the file. For this guide, we are simply going to restrict mkdir command inside the container. To do this, we remove all the references to the mkdir in the file, which could look something like this:
 
 ... 	
 	{
@@ -57,7 +61,7 @@ Once you have the .json file with you, it’s time to make changes to the file y
 we edit the profile, try to run the Docker container with seccomp-profile-no-mkdir.json:
 
 ```execute
-docker run -it --rm --security-opt seccomp=/path/to/file/your-custom-profile.json --name alpine-custom-seccomp alpine /bin/sh
+docker run -it --rm --security-opt seccomp=seccomp-profile-no-mkdir.json --name alpine-custom-seccomp alpine /bin/sh
 ```
 
 Verify mkdir operation on container

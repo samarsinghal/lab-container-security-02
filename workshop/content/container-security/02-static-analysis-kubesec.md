@@ -1,10 +1,6 @@
-# Kubesec
-
 Security risk analysis for Kubernetes resources
 Open Source 
 Opinionated ! Fixed set of rules (Security Best Practices)
-
-## Live demo
 
 [Visit Kubesec.io](https://kubesec.io)
 
