@@ -4,7 +4,7 @@ metadata:
   name: lab-container-security-02
 spec:
   title: Container Security 02
-  description: An interactive workshop on constructing secure images.
+  description: An interactive workshop on container security best practices
   url: https://github.com/samarsinghal/lab-container-security-02
   content:
     files: github.com/samarsinghal/lab-container-security-02

@@ -35,7 +35,7 @@ cat deployment.yaml
 Run kubesec in Docker:
 
 ```execute
-$ docker run -i kubesec/kubesec:latest scan /dev/stdin < deployment.yaml
+docker run -i kubesec/kubesec:latest scan /dev/stdin < deployment.yaml
 ```
 
 ## Kubesec-as-a-Service
@@ -45,7 +45,7 @@ Kubesec is also available via HTTPS at [v2.kubesec.io/scan](https://v2.kubesec.i
 #### Command line usage:
 
 ```execute
-$ curl -sSX POST --data-binary @"deployment.yaml" https://v2.kubesec.io/scan
+curl -sSX POST --data-binary @"deployment.yaml" https://v2.kubesec.io/scan
 ```
 
 ## Example output
@@ -143,7 +143,7 @@ Kubesec returns a JSON array, and can scan multiple YAML documents in a single i
 Check the returned non-zero status code is the score is not greater than 10. 
 
 ```execute
-$ docker run -i kubesec/kubesec:latest scan /dev/stdin < deployment.yaml | grep score
+docker run -i kubesec/kubesec:latest scan /dev/stdin < deployment.yaml | grep score
 ```
 
 Let make some changes to increase the score. 
@@ -174,11 +174,11 @@ cat updated_deployment.yaml
 Run kubesec on updated deployment file:
 
 ```execute
-$ docker run -i kubesec/kubesec:latest scan /dev/stdin < updated_deployment.yaml
+docker run -i kubesec/kubesec:latest scan /dev/stdin < updated_deployment.yaml
 ```
 
 check the new score 
 
 ```execute
-$ docker run -i kubesec/kubesec:latest scan /dev/stdin < updated_deployment.yaml | grep score
+docker run -i kubesec/kubesec:latest scan /dev/stdin < updated_deployment.yaml | grep score
 ```

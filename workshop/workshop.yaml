@@ -3,8 +3,10 @@ name: Container Security 02
 modules:
     activate:
     - workshop-overview
-    - container-security/01-kubesec
-    - container-security/02-conftest
-    - container-security/03-admission-controller
-    - container-security/04-trivy
+    - container-security/00-container-immutability
+    - container-security/01-system-hardening-tools
+    - container-security/02-static-analysis-kubesec
+    - container-security/03-static-analysis-conftest
+    - container-security/04-admission-controller
+    - container-security/05-image-scanning-trivy
     - workshop-summary

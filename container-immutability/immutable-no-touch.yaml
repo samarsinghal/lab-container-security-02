@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: immutable-no-touch
+  name: immutable-no-touch
+spec:
+  containers:
+  - image: httpd
+    name: immutable-no-touch
+    resources: {}
+    startupProbe:
+      exec:
+        command:
+        - rm
+        - /bin/touch
+      initialDelaySeconds: 2
+      periodSeconds: 5
+status: {}

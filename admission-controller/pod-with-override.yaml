@@ -1,7 +1,3 @@
-# A pod with a securityContext explicitly allowing it to run as root.
-# The effect of deploying this with and without the webhook is the same. The
-# explicit setting however prevents the webhook from applying more secure
-# defaults.
 apiVersion: v1
 kind: Pod
 metadata:

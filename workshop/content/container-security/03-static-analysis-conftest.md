@@ -82,7 +82,7 @@ cat deployment.yaml
 Now, We will run Conftest against the deployment.yaml
 
 ```execute
-$ docker run --rm -v $(pwd):/project openpolicyagent/conftest test deployment.yaml
+docker run --rm -v $(pwd):/project openpolicyagent/conftest test deployment.yaml
 ```
 The output shows, out of two test one passed and one failed because container is running as root. As per policy defination container must not run as root
 
@@ -103,7 +103,7 @@ cat updated-deployment.yaml
 Now run Conftest against the updated-deployment.yaml
 
 ```execute
-$ docker run --rm -v $(pwd):/project openpolicyagent/conftest test updated-deployment.yaml
+docker run --rm -v $(pwd):/project openpolicyagent/conftest test updated-deployment.yaml
 ```
 output 
 
