@@ -7,6 +7,8 @@ USER root
 
 ENV ISTIO_VERSION=1.7.4
 
+
+
 # TMC
 RUN curl -L -o /usr/local/bin/tmc $(curl -s https://tanzupaorg.tmc.cloud.vmware.com/v1alpha/system/binaries | jq -r 'getpath(["versions",.latestVersion]).linuxX64') && \
   chmod 755 /usr/local/bin/tmc
@@ -67,7 +69,11 @@ RUN echo "Installing Istioctl" \
   && cp $PWD/bin/istioctl /usr/local/bin/istioctl \
   && istioctl version
 
-
+# CONFTEST
+RUN echo "Installing Conftest" \
+  && curl https://github.com/open-policy-agent/conftest/releases/download/v0.21.0/conftest_0.21.0_Linux_x86_64.tar.gz \
+  && tar xzf conftest_0.21.0_Linux_x86_64.tar.gz \
+  && mv conftest /usr/local/bin
 
 
 USER 1001
