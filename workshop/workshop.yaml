@@ -7,6 +7,6 @@ modules:
     - container-security/01-system-hardening-tools
     - container-security/02-static-analysis-kubesec
     - container-security/03-static-analysis-conftest
-    - container-security/04-admission-controller
-    - container-security/05-image-scanning-trivy
+    # - container-security/04-admission-controller
+    - container-security/04-image-scanning-trivy
     - workshop-summary

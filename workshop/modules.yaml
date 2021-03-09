@@ -10,9 +10,9 @@ modules:
         name: Static Analysis - KubeSec
     container-security/03-static-analysis-conftest:
         name: Static Analysis - ConfTest
-    container-security/04-admission-controller:
-        name: Admission Controller
-    container-security/05-image-scanning-trivy:
+    # container-security/04-admission-controller:
+    #     name: Admission Controller
+    container-security/04-image-scanning-trivy:
         name: Image Scanning - Clair and Trivy
     workshop-summary:
         name: Workshop Summary
