@@ -62,12 +62,12 @@ RUN curl -sSL "https://github.com/concourse/concourse/releases/download/v6.7.1/f
 RUN echo "Installing K14s Carvel tools" \
   && wget -O- https://k14s.io/install.sh | bash 
 
-# Install Istioctl
-RUN echo "Installing Istioctl" \
-  && curl -L https://istio.io/downloadIstio | ISTIO_VERSION=${ISTIO_VERSION} TARGET_ARCH=x86_64 sh - \
-  && cd istio-${ISTIO_VERSION} \
-  && cp $PWD/bin/istioctl /usr/local/bin/istioctl \
-  && istioctl version
+# # Install Istioctl
+# RUN echo "Installing Istioctl" \
+#   && curl -L https://istio.io/downloadIstio | ISTIO_VERSION=${ISTIO_VERSION} TARGET_ARCH=x86_64 sh - \
+#   && cd istio-${ISTIO_VERSION} \
+#   && cp $PWD/bin/istioctl /usr/local/bin/istioctl \
+#   && istioctl version
 
 # CONFTEST
 RUN echo "Installing Conftest" \
