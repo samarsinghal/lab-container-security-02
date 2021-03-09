@@ -104,7 +104,6 @@ Verify touch command is not working
 
 ```execute
 touch test 
-exit
 ```
 
 Exit container

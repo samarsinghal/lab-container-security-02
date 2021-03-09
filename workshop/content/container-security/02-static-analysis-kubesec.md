@@ -173,7 +173,7 @@ Run kubesec on updated deployment file:
 docker run -i kubesec/kubesec:latest scan /dev/stdin < updated_deployment.yaml
 ```
 
-check the new score 
+Check the new score 
 
 ```execute
 docker run -i kubesec/kubesec:latest scan /dev/stdin < updated_deployment.yaml | grep score

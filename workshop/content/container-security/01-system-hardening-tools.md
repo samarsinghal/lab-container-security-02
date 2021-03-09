@@ -49,15 +49,23 @@ There are scenarios where you want to override the default profile, which gives 
 
 You can download Docker’s official default profile "https://raw.githubusercontent.com/docker/labs/master/security/seccomp/seccomp-profiles/default.json" and make changes to it:
 
+
+Default seccomp pofile json 
+```execute
+cat seccomp-profile.json
+```
+
+
 Once you have the .json file with you, it’s time to make changes to the file. For this guide, we are simply going to restrict mkdir command inside the container. To do this, we remove all the references to the mkdir in the file, which could look something like this:
 
-... 	
+	
 	{
 			"name": "mkdir",
 			"action": "SCMP_ACT_ALLOW",
 			"args": []
-	},
-... 
+	}
+
+
 we edit the profile, try to run the Docker container with seccomp-profile-no-mkdir.json:
 
 ```execute

@@ -27,22 +27,22 @@ Now we'll check nginx image for vulnerabilities
 docker run ghcr.io/aquasecurity/trivy:latest image nginx:latest 
 ```
 
-lets check the vulnerabilities in nginx 1.16-alpine version and look for Critical one
+lets check the vulnerabilities in nginx 1.15-alpine version and look for Critical one
 
 ```execute
-docker run ghcr.io/aquasecurity/trivy:latest image nginx:latest | grep CRITICAL
+docker run ghcr.io/aquasecurity/trivy:latest image nginx:1.15-alpine | grep CRITICAL
 ```
 
-You will see CRITICAL: 1
+You will see 3 CRITICAL CVE's
 
 
 Now try another version and see if that vulnerability is fixed in that version 
 
 ```execute
-docker run ghcr.io/aquasecurity/trivy:latest image nginx:1.18-alpine | grep CRITICAL
+docker run ghcr.io/aquasecurity/trivy:latest image nginx:1.16-alpine | grep CRITICAL
 ```
 
-You will see CRITICAL: 0, that means CVE-2019-20367 is fixed with nginx 1.18-alpine 
+You will see CRITICAL: 0, that means all CRITICAL CVE's got fixed in nginx 1.16-alpine 
 
 Harbor provides static analysis of vulnerabilities in images through the open source projects Trivy and Clair.
 
