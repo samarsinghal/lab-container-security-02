@@ -1,7 +1,6 @@
 ./.dockerignore
 ./.gitignore
 ./CREDITS.md
-./Dockerfile
 ./LICENSE
 ./README.md
 ./kustomization.yaml
